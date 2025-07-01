@@ -1,4 +1,4 @@
-const API_KEY = 'b630c165-d033-4f13-b79c-ed0d867bcefb';
+const API_KEY =process.env.API_KEY;
 const BASE_URL = 'https://api.cricapi.com/v1';
 const liveContainer = document.querySelector("#liveMatches .match-container");
 const upcomingContainer = document.querySelector("#upcomingMatches .match-container");
