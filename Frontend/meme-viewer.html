@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Memes | Cricbytes</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="cricweblogo.jpg" class="logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.html#liveMatches">LIVE MATCHES</a></li>
+        <li><a href="index.html#upcomingMatches">UPCOMING MATCHES</a></li>
+        <li><button id="logoutBtn" style="background: none; border: none; color: white; cursor: pointer;">
+          <span class="material-icons" title="LOGOUT">logout</span>
+        </button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="meme-viewer-container">
+    <p id="welcomeMessage" style="color: white; text-align: center;"></p>
+    <div class="meme-grid" id="memeGrid"></div>
+    <div class="loading" id="loadingIndicator">Loading more memes...</div>
+  </div>
+
+  <div class="upload-container">
+    <button class="upload-btn" id="uploadBtn">+</button>
+  </div>
+
+  <!-- Upload Modal -->
+  <div id="uploadModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Upload Meme</h2>
+      <form id="memeUploadForm">
+        <div class="form-group">
+          <label for="memeFile">Select File (Image/Video)</label>
+          <input type="file" id="memeFile" accept="image/*,video/*" required>
+          <div id="filePreview"></div>
+        </div>
+        <div class="form-group">
+          <label for="memeCaption">Caption (Optional)</label>
+          <textarea id="memeCaption" placeholder="Add a funny caption..."></textarea>
+        </div>
+        <button type="submit">Upload Meme</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Display current user
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (user) {
+      document.getElementById('welcomeMessage').textContent = `Welcome, ${user.name}!`;
+    }
+
+    // Logout functionality
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('currentUser');
+      window.location.href = 'login.html';
+    });
+  </script>
+  <script src="memes.js"></script>
+</body>
+</html>

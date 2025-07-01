@@ -1,0 +1,656 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(Backgroundimgprojcricweb.gif);
+  background-size: cover;
+  color: #333;
+}
+
+
+.navbar {
+  background-color: rgba(34, 94, 197, 0.397);
+  color: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 70px;
+}
+
+.navbar img {
+  height: 100px;
+  border-radius: 15%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+  
+.section {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 1rem;
+  color: azure;
+}
+
+.match-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.match-card {
+  background: rgba(34, 94, 197, 0.397);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  transition: all 0.3s ease;
+  border-left: 5px solid transparent;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(10, 151, 202, 0.898);
+}
+#memes {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+#memeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.meme-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.meme-card:hover {
+  transform: scale(1.03);
+}
+
+.meme-card img,
+.meme-card video {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.meme-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.like-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.like-btn:hover {
+  background: rgba(255, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+/* ================================
+   Upload Button (Homepage)
+   ================================ */
+#uploadBtn {
+  background: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#uploadBtn:hover {
+  background: #3e8e41;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Utility States
+   ================================ */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid #ff4444;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  color: #ff4444;
+}
+
+.error button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.empty {
+  text-align: center;
+  color: #aaa;
+  padding: 2rem;
+}
+footer {
+  text-align: center;
+  background-color: rgba(34, 94, 197, 0.397);
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+.match-details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.scorecard,
+.commentary-section {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.inning {
+  margin-bottom: 2rem;
+}
+
+.comment {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-time {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.comment-text {
+  margin-top: 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #0074d9;
+  color: white;
+}
+
+/* ================================
+   Meme Viewer Page
+   ================================ */
+.meme-viewer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.meme-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.meme-item {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.meme-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.meme-media-container {
+  width: 100%;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  max-height: 600px;
+}
+
+.meme-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.meme-info {
+  padding: 12px 15px;
+}
+
+.meme-caption {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.meme-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meme-uploader {
+  font-size: 13px;
+  color: #555;
+}
+
+/* ================================
+   Upload Modal
+   ================================ */
+#uploadModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  width: 95%;
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: #333;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+#filePreview {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  background: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#filePreview img,
+#filePreview video {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+/* Form Styles */
+#memeUploadForm input,
+#memeUploadForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#memeUploadForm textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+#memeUploadForm button[type="submit"] {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Floating Upload Button */
+.upload-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.upload-btn {
+  background: #4caf50;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-btn:hover {
+  transform: scale(1.1);
+  background: #3e8e41;
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1001;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.toast.success {
+  background: #4caf50;
+}
+
+.toast.error {
+  background: #ff4757;
+}
+
+/* ================================
+   Responsive Breakpoints
+   ================================ */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 20px;
+  }
+
+  .match-details-container {
+    grid-template-columns: 1fr;
+  }
+
+  #memeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .meme-grid {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  #filePreview {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .meme-grid {
+    gap: 12px;
+  }
+
+  .meme-media-container {
+    max-height: 400px;
+  }
+
+  .meme-caption,
+  .meme-uploader {
+    font-size: 12px;
+  }
+
+  #filePreview {
+    height: 200px;
+  }
+}
+.status-message {
+  padding: 12px 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+  display: none;
+  animation: fadeIn 0.3s;
+}
+
+.status-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.auth-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.auth-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-btn:hover {
+  background: #45a049;
+}
+
+.auth-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.auth-footer a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+#statusMessage {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;
+  max-width: 80%;
+  text-align: center;
+  color: white;
+}
+
+#statusMessage.success {
+  background-color: #4CAF50;
+}
+
+#statusMessage.error {
+  background-color: #F44336;
+}

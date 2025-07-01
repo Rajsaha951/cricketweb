@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CricBytes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+   <nav class="navbar">
+    <div class="logo">
+      <img src="cricweblogo.jpg" class="logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#live" id="button">LIVE MATCHES</a></li>
+      <li><a href="#upcoming" id="button" >UPCOMING MATCHES</a></li>
+      <li><a href="meme-viewer.html" id="memeButton">MEMES</a></li>
+      <li>
+       <a href="login.html" id="button">
+    <span class="material-symbols-outlined" title="LOGIN">login</span>
+  </a>
+</li>
+   </ul>
+</nav>
+ </header>
+<!-- Live Matches Section -->
+  <section id="liveMatches" class="section">
+    <h2 style="color: azure">🔴 Live Matches</h2>
+    <div class="match-container" id="liveMatches">
+      <p  style="color: azure">Loading matches...</p>
+      <!-- Match cards injected here by JS -->
+    </div>
+  </section>
+
+
+  <!-- Upcoming Matches Section -->
+  <section id="upcomingMatches" class="section">
+    <h2 style="color: azure">📅 Upcoming Matches</h2>
+    <div class="match-container">
+      <div class="match-card">
+       <p  style="color: azure">Loading matches...</p>
+      <!-- Match cards injected here by JS -->  
+      </div>
+    </div>
+  </section>
+
+  <!-- Meme Gallery Section -->
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CricBytes. Made with 🏏 and 😂.</p>
+  </footer>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=login" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+  <script src="memes.js"></script>
+</body>
+</html>
