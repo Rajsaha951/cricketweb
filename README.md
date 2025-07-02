@@ -1,32 +1,33 @@
-🏏 CricBytes – Live Cricket Scores & Memes
+🏏 CricBytes – Live Cricket Scores & Memes<br>
 
 CricBytes is a dynamic full-stack cricket web application that offers live cricket scores, upcoming match schedules, detailed scorecards, and a meme-sharing platform for users to upload and view cricket-related memes.
 
-🔗 Live Demo
-🟢Not available now
+🔗 Live Demo<br>
+🟢Not available now<br><br>
 
 
-🚀 Features
-📺 Live Match Updates using CricAPI
-📅 Upcoming Match Schedules
-📊 Full Match Scorecards
-🎭 Cricket Meme Gallery (with infinite scroll)
-📤 User Meme Uploads (images & videos)
-🔐 JWT-Based Authentication (Signup/Login)
-❤️ Like System for Memes
-🧰 Tech Stack
+🚀 Features<br>
+📺 Live Match Updates using CricAPI<br>
+📅 Upcoming Match Schedules<br>
+📊 Full Match Scorecards<br>
+🎭 Cricket Meme Gallery (with infinite scroll)<br>
+📤 User Meme Uploads (images & videos)<br>
+🔐 JWT-Based Authentication (Signup/Login)<br>
+❤️ Like System for Memes<br>
 
-Frontend
-1.HTML5, CSS3, JavaScript
-2.Axios for API requests
-3.Responsive design for mobile and desktop
+🧰 Tech Stack<br>-
 
-Backend
-1.Node.js + Express
-2.MongoDB + Mongoose
-3.Multer for file uploads
-4.JSON Web Tokens (JWT) for authentication
+Frontend<br>
+1.HTML5, CSS3, JavaScript <br>
+2.Axios for API requests<br>
+3.Responsive design for mobile and desktop<br>
 
-APIs
-CricAPI – For real-time match data
+Backend<br>
+1.Node.js + Express<br>
+2.MongoDB + Mongoose<br>
+3.Multer for file uploads<br>
+4.JSON Web Tokens (JWT) for authentication<br><br>
+
+APIs<br>
+CricAPI – For real-time match data<br>
 
