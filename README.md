@@ -1,4 +1,5 @@
 🏏 CricBytes – Live Cricket Scores & Memes
+
 CricBytes is a dynamic full-stack cricket web application that offers live cricket scores, upcoming match schedules, detailed scorecards, and a meme-sharing platform for users to upload and view cricket-related memes.
 
 🔗 Live Demo
